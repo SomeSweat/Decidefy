@@ -1,4 +1,4 @@
-# JavaScript-Project-HTML-webdesign-Decidify
+# Decidefy - JavaScript Project (Informatik Grundkurs)
 Bei Decidefy helfen wir dir, Entscheidungen leichter zu treffen.
 
 Du bist unsicher, was du machen sollst? Schreib deine Idee bei uns rein, und wir zeigen dir die Pro- und Kontra Argumente. So siehst du alle Seiten auf einen Blick.
