@@ -1,24 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <title>Decision Wheel</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <h1>Decision Wheel</h1>
-  <canvas id="wheel" width="500" height="500"></canvas>
-  <button id="spinBtn">Spin</button>
-  <div id="result">
-    <h2 id="choice"></h2>
-    <div id="arguments">
-      <h3>Pro</h3>
-      <ul id="proList"></ul>
-      <h3>Contra</h3>
-      <ul id="contraList"></ul>
-    </div>
-  </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="script.js"></script>
+<title>Decidefy – Dein Entscheidungshelfer</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- INTRO SCREEN -->
+<div id="decidefy-startscreen">
+    <div class="decidefy-container">
+
+        <img src="845e239d-7d38-49c8-b0b0-924930ffcb1f.png" class="decidefy-logo">
+
+        <h1>Willkommen bei Decidefy</h1>
+
+        <p class="decidefy-description">
+        Decidefy hilft dir dabei, Entscheidungen einfacher zu treffen,
+        wenn du zwischen mehreren Optionen feststeckst.
+        </p>
+
+        <p class="decidefy-description">
+        Füge deine Möglichkeiten hinzu und vergleiche sie mit
+        <strong>Pro- und Contra-Argumenten</strong>.
+        </p>
+
+        <p class="decidefy-description">
+        Oder überlasse es dem <strong>Rad des Schicksals</strong>.
+        </p>
+
+        <button id="decidefy-start-btn">Entscheidung starten</button>
+
+    </div>
+</div>
+
+<script>
+document.getElementById("decidefy-start-btn").onclick = function() {
+    document.getElementById("decidefy-startscreen").style.display = "none";
+};
+</script>
+
+
+
+<div class="container">
+
+<!-- LOGO -->
+<header>
+
+<img src="845e239d-7d38-49c8-b0b0-924930ffcb1f.png" class="mainLogo">
+
+<h1>Decidefy</h1>
+<p class="subtitle">Dein smarter Entscheidungshelfer</p>
+
+<p class="disclaimer">
+Disclaimer: Die KI-generierten Inhalte dienen ausschließlich zur Unterhaltung
+und Entscheidungsunterstützung. Decidefy übernimmt keine Verantwortung
+für Entscheidungen oder deren Konsequenzen.
+</p>
+
+</header>
+
+
+
+<!-- OPTIONEN -->
+<div class="card aiCard">
+
+<h2>Optionen hinzufügen</h2>
+
+<div class="inputRow">
+<input id="optionInput" type="text" placeholder="Option eingeben">
+<button onclick="addOption()">Hinzufügen</button>
+</div>
+
+<ul id="optionList"></ul>
+
+</div>
+
+
+
+<!-- MAIN SECTION (WHEEL + AI NEBENEINANDER) -->
+<div class="mainSection">
+
+
+<!-- GLÜCKSRAD -->
+<div class="card wheelCard">
+
+
+<h2>Glücksrad</h2>
+
+<div id="wheel-container">
+
+<div class="pointer">▼</div>
+
+<canvas id="wheel" width="400" height="400"></canvas>
+
+</div>
+
+<button id="spinBtn">Rad drehen</button>
+
+<p id="result" class="resultText"></p>
+
+</div>
+
+
+
+<!-- KI -->
+<div class="card">
+
+<h2>KI-Entscheidung</h2>
+
+<div class="inputRow">
+<input id="aiQuestion" type="text" placeholder="Deine Frage hier">
+<button onclick="getDecisionWithAI()">Pro / Contra generieren</button>
+</div>
+
+<div id="aiResult"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
